@@ -1,0 +1,139 @@
+
+
+:root {
+  --header-height: 56px; 
+}
+
+app-header {
+  display: block;
+  width: 100%;
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  z-index: 1000;
+  position: relative;
+  height: auto; 
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh; 
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  background-color: var(--header-bg);
+  color: var(--text-color);
+
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  app-sidebar {
+  display: flex;          
+  width: 100%;
+  box-sizing: border-box;
+
+  flex-shrink: 0;     
+}
+
+
+  app-sidebar app-metric-chart {
+    flex: 0 0 auto;
+    min-width: 140px;
+  }
+
+  .main-content {
+    order: 2;
+    padding: 0.5rem;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  app-sidebar {
+    width: 190px;
+  }
+}
+
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  background-color: var(--main-bg);
+  padding: 0.75rem;
+   /* border : 2px solid black;  */
+
+}
+
+
+app-sidebar::-webkit-scrollbar {
+  height: 6px;
+}
+
+app-sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 4px;
+}
+
+.green {
+  color: #00ff90 !important;
+}
+
+.purple h1 {
+  color: #c879ff !important;
+}
+
+.highlight {
+  color: orange !important;
+}
+
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0.5rem;
+  
+  }
+}
+
+
+
+
+
+body.blue-theme {
+  --header-bg: #001c3c;
+  --sidebar-bg: rgb(1, 1, 53);
+  --main-bg: rgb(1, 1, 53);
+  --text-color: #ffffff;
+  --stat-bg: #00122a;
+  --border-color: white;
+}
+
+body.light-theme {
+  --header-bg: #f0f0f0;
+  --sidebar-bg: #ffffff;
+  --main-bg: #f9f9f9;
+  --text-color: black;
+  --stat-bg: #e0e0e0;
+  --border-color: #181717;
+}
+
+body.dark-theme {
+  --header-bg: black;
+  --sidebar-bg: black;
+  --main-bg: black;
+  --text-color: white;
+  --stat-bg: rgb(39, 37, 37);
+  --border-color: white;
+}
+
+

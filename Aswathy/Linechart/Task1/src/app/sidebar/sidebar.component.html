@@ -1,0 +1,39 @@
+
+<!-- <div class="sidebar" >
+  <div class="stat-box">
+    <p>Total Employees:</p>
+    <h1>126</h1>
+  </div>
+  <div class="stat-box purple">
+    <p>Not Clockedin:</p>
+    <h1>68</h1>
+  </div>
+  <div class="stat-box">
+    <p>UPH</p>
+    <h1 class="green">500</h1>
+  </div>
+  <div class="stat-box">
+    <p>Employee Performance</p>
+    <h1 class="green">88.02%</h1>
+  </div>
+  <div class="stat-box">
+    <p>Employee Utilization</p>
+    <h1 class="green">50.09%</h1>
+  </div>
+</div> -->
+
+
+
+
+
+
+<div class="sidebar">
+  <app-metric-chart
+    *ngFor="let chart of metrics"
+    [label]="chart.label"
+    [value]="chart.value"
+    [unit]="chart.unit"
+    [color]="chart.color"
+    [chartType]="chart.chartType">
+  </app-metric-chart>
+</div>

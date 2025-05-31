@@ -1,0 +1,30 @@
+<div class="table-container">
+  <div class="column" *ngFor="let tableIndex of [0,1,2]">
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Employee ID</th>
+          <th>EP</th>
+          <th>EU</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of getTableData(tableIndex)"
+            [class.zero]="employee && isZeroEp(employee.ep)">
+          <td>{{ employee?.no ?? '' }}</td>
+          <td [ngStyle]="{ color: (employee && isZeroEp(employee.ep) && isZeroEp(employee.eu)) ? 'purple' : '' }">
+            {{ employee?.id ?? '\u00A0' }}
+          </td>
+          <td [ngStyle]="{ color: (employee && isZeroEp(employee.ep)) ? 'orange' : 'green' }">
+            {{ employee?.ep ?? '\u00A0' }}
+          </td>
+          <td [ngStyle]="{ color: (employee && isZeroEp(employee.eu)) ? 'orange' : 'green' }">
+            {{ employee?.eu ?? '\u00A0' }}
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
