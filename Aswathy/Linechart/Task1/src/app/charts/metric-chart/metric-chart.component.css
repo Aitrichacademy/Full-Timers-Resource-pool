@@ -1,0 +1,33 @@
+
+
+.chart-container {
+ 
+  background-color: var(--stat-bg);
+ 
+
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+
+}
+/* 
+.chart {
+  width: 100%;
+  height: auto;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.chart {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

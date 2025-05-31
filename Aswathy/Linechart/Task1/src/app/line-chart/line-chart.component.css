@@ -1,0 +1,54 @@
+/* .chart-container {
+  background-color: #0a192f;
+  padding: 2px;
+  overflow: auto;
+
+   height: 65.2vh;
+   width: 100%;
+   
+}
+
+:host {
+  font-family: Arial, sans-serif;
+}
+
+@media (min-width: 2560px)  {
+  .chart-container{
+    height: 65.3vh;
+  }
+} */
+
+.chart-container {
+  background-color: #0a192f;
+  padding: 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 65.2vh;
+  position:relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+:host {
+  font-family: Arial, sans-serif;
+  display: block;
+  width: 100%;
+}
+
+/* For ultra-wide screens */
+@media (min-width: 2560px) {
+  .chart-container {
+    height: 65.3vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 55vh;
+    padding-left: 20px; /* Add more padding if needed */
+  }
+}
+
+
+
+

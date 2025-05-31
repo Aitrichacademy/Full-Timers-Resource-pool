@@ -1,0 +1,9 @@
+{
+  "metrics": [
+    { "label": "Total Employees", "value": 126, "unit": "", "color": "var(--text-color)", "chartType": "text" },
+    { "label": "Not Clockedin", "value": 68, "unit": "", "color": "#b366ff", "chartType": "progress" },
+    { "label": "UPH", "value": 500, "unit": "", "color": "#00ff00", "chartType": "text" },
+    { "label": "Employee Performance", "value": 88.02, "unit": "%", "color": "#00ffbf", "chartType": "gauge" },
+    { "label": "Employee Utilization", "value": 50.09, "unit": "%", "color": "#00ffbf", "chartType": "gauge" }
+  ]
+}
