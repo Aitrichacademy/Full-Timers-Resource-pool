@@ -1,0 +1,35 @@
+
+.theme-default {
+  --topbar-bg: #13035b;
+  --sidebar-bg: #13035b;
+  --table-bg: #090367;
+  --text-color: white;
+  background-color:#090367;;
+  
+}
+
+/* light theme */
+.theme-light {
+  --topbar-bg: #d2cece;
+  --text-color: black;
+   --sidebar-bg: #d2cece;
+  --table-bg: white;
+  background-color: white;
+ 
+}
+
+/* Blue theme */
+.theme-blue {
+ --topbar-bg: #2b90f6;
+  --text-color: white;
+   --sidebar-bg: #2b90f6;
+  --table-bg: rgb(141, 191, 249);
+  background-color: rgb(141, 191, 249);
+   
+}
+
+.child-box {
+  background-color: var(--topbar-bg);
+  color: var(--text-color);
+ 
+}

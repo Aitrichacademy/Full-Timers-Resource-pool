@@ -1,0 +1,27 @@
+.box {
+    height: 115px;
+    width: 115px;
+    margin-bottom: 13px;
+  
+  }
+  .center{
+    justify-items: center !important;
+    
+  }
+  .bold{
+    font-weight: bolder;
+  }
+ .sidebarTheme{
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    fill: var(--sidebar-bg);
+}
+.smallFont{
+  font-size: small !important;
+}
+.chart-container {
+  margin: 20px auto;
+  margin-top: 0px;
+  width: 100%;
+
+}
