@@ -1,0 +1,29 @@
+<div class="justify-content-center">
+   <div class="row mt-1">
+      <div class="col-auto"></div>
+      <div class="col-lg justify-content-center
+      "  *ngFor="let index of [0,1,2]"  >
+         
+         <table  class="table table-bordered custom-table  text-center pl-2">
+            <thead>
+               <tr>
+                  <th>No.</th>
+                  <th>Employee ID</th>
+                  <th>EP</th>
+                  <th>EU</th>
+               </tr>
+            </thead>
+            <tbody> 
+               
+               <tr *ngFor="let item of employees?.slice(index*15,((index+1)*15))">
+                  <td class="fw-bold tabletheme">{{item.No || '\u00A0'}}</td>
+                  <td class="fw-bold tabletheme" [ngClass]="[item.EU=='0%'&&item.EP=='0%' ? 'textColour' : '']">{{item.EmployeeID || '\u00A0'}}</td>
+                  <td class="fw-bold tabletheme" [ngClass]="[item.EP=='0%' ? 'EUEPcolour' : '']">{{item.EP || '\u00A0'}}</td>
+                  <td class="fw-bold tabletheme" [ngClass]="[item.EU=='0%'? 'EUEPcolour' : '']">{{item.EU || '\u00A0'}}</td>
+               </tr>
+             
+        </tbody>
+      </table>
+      </div>
+   </div>
+</div>

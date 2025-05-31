@@ -1,0 +1,11 @@
+<div class="container-fluid pb-2" [ngClass]="currentTheme" style="min-height: 100vh;">
+    <div class="row child-box"><app-topbar (themeChange)="setTheme($event)"></app-topbar></div>
+    <div class="row mt-2">
+        <div class="col-lg-1 pr-0 mx-h-auto"><app-sidebar></app-sidebar></div>
+        <div class="col-lg-11">
+            <div class="ml-md-5 justify-content-center sidebar"><app-line-chart></app-line-chart></div>
+        </div>
+        <!-- <app-table ></app-table> -->
+    </div>
+
+</div>

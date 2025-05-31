@@ -1,0 +1,24 @@
+.table,td,tr{
+    /* background-color: rgb(2, 2, 59) !important; */
+    color: #fdfbfb;
+    padding: 7px;
+}
+.thead,th{
+    
+    color:white;
+    padding: 4px;
+    background-color: rgb(110, 244, 130);
+}
+.textColour{
+    color: blueviolet !important;
+}
+.EUEPcolour{
+    color: orange !important;
+}
+.tabletheme{
+   background-color: var(--table-bg);
+    color: var(--text-color);  
+}
+.width{
+    max-width: 98%;
+}
