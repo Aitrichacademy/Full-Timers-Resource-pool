@@ -10,7 +10,10 @@
   <app-sidebar></app-sidebar>
   <div class="main-content">
     <!-- <app-employeetable></app-employeetable> -->
-     <app-line-chart></app-line-chart>
+     <app-line-chart
+      [data]="chartData"
+      [target]="target"
+  ></app-line-chart>
   </div>
 </div>
 </div>
