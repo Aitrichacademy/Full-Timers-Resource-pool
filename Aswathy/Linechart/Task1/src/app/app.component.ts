@@ -9,4 +9,13 @@ import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 export class AppComponent {
   title = 'Task1';
 
+
+
+chartData = [
+  { time: '04:30', value: 200 },
+  { time: '05:30', value: 5000 }
+];
+
+target = 5000;
+
 }

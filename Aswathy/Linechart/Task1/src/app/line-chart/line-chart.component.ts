@@ -88,7 +88,7 @@ this.margin = isMobileS
       .attr('viewBox', `0 0 ${this.width + this.margin.left + this.margin.right+100} ${this.height + this.margin.top + this.margin.bottom+40}`)
       .attr('preserveAspectRatio', 'xMidYMid meet')
       .append('g')
-      // .attr('transform', `translate(${this.margin.left},${this.margin.top-40})`);
+     
       .attr('transform', `translate(${this.margin.left},${this.margin.top})`);
   }
 
@@ -110,8 +110,8 @@ this.margin = isMobileS
     const maxValue = values.length > 0 ? Math.max(...values) : 0;
        const roundedMaxValue = Math.ceil(maxValue / 100) * 100;
        const extraPadding = 250
-       const yLabel= roundedMaxValue>this.target ? roundedMaxValue : this.target ?? 0; 
-    
+      //  const yLabel= roundedMaxValue>this.target ? roundedMaxValue : this.target ?? 0; 
+    const yLabel = Math.max(roundedMaxValue, this.target ?? 0, 6000);
    
     const y = d3.scaleLinear()
       .domain([0, yLabel])
@@ -130,6 +130,7 @@ this.margin = isMobileS
       .selectAll('line')
       .style('stroke', '#D9D9D9');
 
+
     this.svg.append('g')
       .attr('transform', `translate(0,${this.height})`)
       .call(d3.axisBottom(x))
@@ -137,7 +138,20 @@ this.margin = isMobileS
       .style('font-size', '.69em')
       .selectAll('line')
       .style('stroke', '#D9D9D9');
-
+//---------------------------------------
+      this.svg.selectAll('.vertical-line')
+  .data(this.data)
+  .enter()
+  .append('line')
+  .attr('class', 'vertical-line')
+  .attr('x1', (d: any) => x(d.time))
+  .attr('x2', (d: any) => x(d.time))
+  .attr('y1', 0)
+  .attr('y2', this.height)
+  .attr('stroke', '#D9D9D9')
+  .attr('stroke-width', 1)
+  .attr('stroke-dasharray', '2,2');
+//----------------------------------------------
     this.svg.append('g')
       .call(d3.axisLeft(y)
         .tickFormat((d: d3.NumberValue) => `${+d/1000}k`))
@@ -166,7 +180,8 @@ this.margin = isMobileS
         this.svg.append('path')
           .datum(targetData)
           .attr('fill', 'none')
-          .attr('stroke', 'white')
+          // .attr('stroke', 'white')
+          .attr('stroke', '#3B82F6')
           .attr('stroke-width', 1)
           .attr('stroke-dasharray', '5,5')
           .attr('d', targetLine);
@@ -182,7 +197,7 @@ this.margin = isMobileS
     this.svg.append('path')
       .datum(this.data)
       .attr('fill', 'none')
-      .attr('stroke', 'white')
+      .attr('stroke', '#3B82F6')
       .attr('stroke-width', 4)
       .attr('d', line);
 
@@ -195,7 +210,7 @@ this.margin = isMobileS
       .attr('cx', (d: ThroughputData) => x(d.time) ?? 0)
       .attr('cy', (d: ThroughputData) => y(d.value) ?? 0)
       .attr('r', 5)
-      .attr('fill', 'white');
+      .attr('fill', 'red');
 
     const fontSize = Math.max(14, Math.min(26, this.width / 30)); 
  
@@ -251,8 +266,8 @@ this.margin = isMobileS
   private drawHeader(fontSize: number): void {
  
 
-    // const headerYOffset = window.innerWidth < 375 ? 30 : (window.innerWidth < 768 ? 20 : 30);
-const headerYOffset = window.innerWidth < 375 ? -160 : (window.innerWidth < 768 ? -140 : -30);
+// const headerYOffset = window.innerWidth < 375 ? -160 : (window.innerWidth < 768 ? -140 : -30);
+const headerYOffset = window.innerWidth < 375 ? -150 : (window.innerWidth < 768 ? -120 : -20);
 const headerGroup = this.svg.append('g')
   .attr('class', 'chart-header')
  
@@ -270,13 +285,17 @@ const headerGroup = this.svg.append('g')
 
   private drawLegend(fontSize: number): void {
     
-    const legendYOffset = window.innerWidth < 375
-  ? -80    
-  : window.innerWidth < 768
-    ? -60  
-    : this.margin.top + 20;  
+  //   const legendYOffset = window.innerWidth < 375
+  // ? -80    
+  // : window.innerWidth < 768
+  //   ? -60  
+  //   : this.margin.top + 20;  
    
-// const legendYOffset = window.innerWidth < 768 ? 50 : this.margin.top + 20;
+const legendYOffset = window.innerWidth < 375
+  ? -110
+  : window.innerWidth < 768
+    ? -80
+    : this.margin.top - 10;
 
 
 const legend = this.svg.append('g')
@@ -315,8 +334,7 @@ const goalLegend = legend.append('g')
       .attr('x', x + 90)
       .attr('y', 10)
       .text(text)
-      // .style('font-size', `${fontSize}px`)
-      // .style('font-size', window.innerWidth < 768 ? '12px' : `${fontSize}px`)
+    
        .style('font-size', smallFont)
       .style('fill', 'white');
 
