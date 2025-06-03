@@ -18,4 +18,10 @@ export class EmployeeDetailsService {
     getChartName():Observable<any>{
       return this.http.get("http://localhost:3000/chartName")
     }
+    getLineChart():Observable<any>{
+      return this.http.get("http://localhost:3000/line-chart")
+    }
+    getLineChartTarget():Observable<any>{
+      return this.http.get("http://localhost:3000/target")
+    }
 }
