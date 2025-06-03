@@ -3,9 +3,20 @@
     <div class="row mt-2">
         <div class="col-lg-1 pr-0 mx-h-auto"><app-sidebar></app-sidebar></div>
         <div class="col-lg-11">
-            <div class="ml-md-5 justify-content-center sidebar"><app-line-chart></app-line-chart></div>
+            <div class="ml-md-5 justify-content-center sidebar">
+                <div class="p-3 bd-highlight box-bg custom-h-50-lg w-100">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-lg">
+                        <app-line-chart></app-line-chart></div>
+                    <div class="col-lg"><app-table ></app-table></div>
+                        <!-- <app-line-chart [data]="throughputData" [target]="targetLine"></app-line-chart> -->
+                    </div>
+                </div>
+            </div>
+            <!-- </div><app-line-chart></app-line-chart></div> -->
         </div>
-        <!-- <app-table ></app-table> -->
+        <!--  -->
     </div>
 
 </div>

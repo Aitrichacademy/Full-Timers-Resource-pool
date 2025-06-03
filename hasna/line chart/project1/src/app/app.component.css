@@ -33,3 +33,27 @@
   color: var(--text-color);
  
 }
+.card {
+    background-color: var(--background-color) !important;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+}
+
+.card h1 {
+    font-size: 1.6vw;
+    color: #fff !important;
+}
+
+.box-bg {
+    background-color:  var(--background-color) !important;
+    border-radius: 5px;
+}
+
+.custom-h-100-lg {
+    height: calc(100vh - 90px); /* or based on your header/footer */
+}
+
+.custom-h-50-lg {
+    height: 50%;
+}
